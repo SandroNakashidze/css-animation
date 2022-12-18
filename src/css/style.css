@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.clouds{
+    height: 100vh;
+    width: 100%;
+    background-image: url(/src/img/giphy.gif);
+    position: relative;
+    background-position: center;
+    overflow-x: hidden;
+}
+.highway{
+    height: 180px;
+    width: 500%;
+    display: block;
+    background-image: url(/src/img/road.jpg);
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    animation-name: highway;
+    animation-duration: 4s;
+    animation-delay: -2s;
+}
+.city{
+    height: 450px;
+    width: 500%;
+    background-image: url(/src/img/11.png);
+    position: absolute;
+    bottom: 180px;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 1;
+    background-repeat: repeat-x;
+    animation-name: city;
+    animation: city 5s linear infinite;
+}
+@keyframes city{
+transform {translate: left: 50px right: 50px}
+  
+    75%  {background-color:transparent; left:10px; right:50px;}
+    100% {background-color:transparent; right:10px; left:50px;}
+}
+.bus{
+    width: 400px;
+    height: auto;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+}
+.bus img{
+    width: 100%;
+    animation: bus 2s linear infinite;
+}
+
+.wheel{
+    left: 50%;
+    bottom: 64px;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes wheel{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+.wheel img{
+    width: 40px;
+    height: 40px;
+    animation: wheel 4s linear infinite;
+}
+.frontwheel{
+    left: 43px;
+    position: absolute;
+}
+.backtwheel{
+    left: -115px;
+    position: absolute;
+}
